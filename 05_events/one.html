@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body>
+    <div>
+        <ul id="images">
+            <li><img id="1" width="150px" src="https://images.pexels.com/photos/20412064/pexels-photo-20412064/free-photo-of-portofino.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img id="2" width="150px" src="https://images.pexels.com/photos/20326292/pexels-photo-20326292/free-photo-of-a-woman-in-a-white-shirt-and-black-skirt-is-standing-on-a-ledge.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img id="3" width="150px" src="https://images.pexels.com/photos/20468216/pexels-photo-20468216/free-photo-of-a-green-door-with-a-vine-growing-out-of-it.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img id="4" width="150px" src="https://images.pexels.com/photos/20377821/pexels-photo-20377821/free-photo-of-the-green-gate-inside-the-city-palace-representing-spring-is-dedicated-to-lord-ganesha.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img id="5" width="150px" src="https://images.pexels.com/photos/18424481/pexels-photo-18424481/free-photo-of-a-man-fishing-from-the-pier.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a href="https://google.com" id="google" style="color: black;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById("3").onclick = function() {
+    //     alert(ht)
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clintX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    document.getElementById("images").addEventListener('click', function(e){
+        // console.log('cliked inside the ul')
+    }, false)
+
+    document.getElementById("3").addEventListener('click', function(e){
+        // console.log('3 clicked')
+        // e.stopPropagation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        // e.preventDefault()
+        // console.log("google");
+    }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.parentNode);
+
+        if(e.target.tagName === 'IMG'){
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+        // removeIt.parentNode.removeChild(removeIt)
+        }
+    }, false)
+    
+</script>
+</html>
