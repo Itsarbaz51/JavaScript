@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Them Changer</title>
+    <style>
+        div{
+            display: flex;
+            gap: 2px;
+        }
+        .button {
+            height: 50px;
+            width: 50px;
+            border: 2px solid;    
+            cursor: pointer;
+        }
+        #gray{
+            background-color: gray;
+        }
+        #white{
+            background-color: white;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Schema Switcher</h1>
+    <div>
+    <span class="button" id="gray"></span>
+    <span class="button" id="white"></span>
+    <span class="button" id="blue"></span>
+    <span class="button" id="yellow"></span>
+    </div>
+
+    <h2>
+        Try clicking on one of the colors above
+        <span>to change the backgroud color of this page!</span>
+    </h2>
+</body>
+<script>
+    const buttons = document.querySelectorAll(".button");
+    const body = document.querySelector("body");
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function(e){
+            if(e.target.id === "gray") {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === "white") {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === "blue") {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === "yellow") {
+                body.style.backgroundColor = e.target.id;
+            }
+        })
+    })
+</script>
+</html>
