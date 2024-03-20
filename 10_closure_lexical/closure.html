@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clouser</title>
+  </head>
+  <body>
+    <button id="ora">Orange</button>
+    <button id="gree">Green</button>
+  </body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+
+
+
+      // lexical scoping
+    function outer(){
+        let username = "arbaz"
+        function inner(){
+          // console.log("inner",username);
+        }
+
+        function innerTwo(){
+          // console.log("innetTwo", username);
+        }
+        inner()
+        innerTwo()
+    }
+    outer()
+    // console.log("outer", username);
+
+
+
+
+    // closure
+
+//     function makeFunc() {
+//       const name = "Mozilla";
+//       function displayName() {
+//         console.log(name);
+//       }
+//       return displayName;
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+
+
+function clickHandler(color){
+  return function(){
+    document.body.style.backgroundColor = `${color}`
+  }
+}
+
+document.getElementById('ora').onclick = clickHandler('orange')
+document.getElementById('gree').onclick = clickHandler('green')
+
+  </script>
+</html>
